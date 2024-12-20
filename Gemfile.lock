@@ -196,6 +196,7 @@ GEM
     public_suffix (6.0.1)
     puma (6.5.0)
       nio4r (~> 2.0)
+    quilljs-rails (0.0.4)
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.8)
@@ -355,6 +356,7 @@ DEPENDENCIES
   kamal
   propshaft
   puma (>= 5.0)
+  quilljs-rails (~> 0.0.4)
   rails (~> 8.0.1)
   rubocop-rails-omakase
   selenium-webdriver

@@ -1,4 +1,6 @@
-<%= render @post %>
+
+<h1><%= sanitize(@post.title) %></h1>
+<%= sanitize(@post.content) %>
 
 <% if @post.user == current_user %>
   <div>

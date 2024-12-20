@@ -1,32 +1,29 @@
-<%= form_with(model: post) do |form| %>
+<%= form_with(model: post, local: true) do |f| %>
   <% if post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :slug, style: "display: block" %>
-    <%= form.text_field :slug %>
+    <%= f.label :content %>
+    <!-- Hidden field to store the content -->
+    <%= f.hidden_field :content, id: "post_content" %>
+    <!-- Quill editor container -->
+    <div id="quill_editor" class="quill_container"></div>
   </div>
 
   <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.textarea :content %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

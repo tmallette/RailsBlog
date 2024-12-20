@@ -17,6 +17,7 @@ gem "kamal", require: false
 gem "thruster", require: false
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'turbo-rails'
+gem 'quilljs-rails', '~> 0.0.4'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
