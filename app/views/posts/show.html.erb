@@ -1,9 +1,8 @@
 
 <h1><%= sanitize(@post.title) %></h1>
-<%= @post.updated_at %>
-<%= sanitize(@post.content) %>
-
 <%= link_to @post.user.author, author_path(@post.user.author) %>
+<%= @post.updated_at.strftime("%B %d, %Y") %>
+<%= sanitize(@post.content) %>
 
 <% if @post.user == current_user %>
   <div>
