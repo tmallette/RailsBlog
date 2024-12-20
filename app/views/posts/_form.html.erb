@@ -10,13 +10,11 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="field form-group mb-3">
+    <%= f.text_field :title, class: "form-control", placeholder: 'Title' %>
   </div>
 
-  <div>
-    <%= f.label :content %>
+  <div class="field form-group mb-3">
     <!-- Hidden field to store the content -->
     <%= f.hidden_field :content, id: "post_content" %>
     <!-- Quill editor container -->
@@ -24,6 +22,6 @@
   </div>
 
   <div>
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

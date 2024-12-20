@@ -1,15 +1,18 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Posts" %>
 
 <h1>Posts</h1>
 
 <% if user_signed_in? %>
-  <%= link_to "New post", new_post_path %>
+  <%= link_to "Create new post", new_post_path, class: "btn btn-primary mb-3" %>
 <% end %>
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= link_to post.title, post_path(post) %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <%= link_to "Read more", post_path(post), class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
 </div>

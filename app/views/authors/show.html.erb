@@ -1,9 +1,12 @@
 <h1>Posts by <%= @user.author %></h1>
 
-<ul>
+<div id="posts">
   <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, post_path(post) %>
-    </li>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <%= link_to "Read more", post_path(post), class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>

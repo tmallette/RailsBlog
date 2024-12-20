@@ -1,14 +1,17 @@
 
-<h1><%= sanitize(@post.title) %></h1>
-<%= link_to @post.user.author, author_path(@post.user.author) %>
-<%= @post.updated_at.strftime("%B %d, %Y") %>
-<%= sanitize(@post.content) %>
-
 <% if @post.user == current_user %>
   <div>
-    <%= link_to "Edit this post", edit_post_path(@post) %> |
-    <%= link_to "Back to posts", posts_path %>
-
-    <%= button_to "Destroy this post", @post, method: :delete %>
+    <%= link_to "Edit this post", edit_post_path(@post), class: 'btn btn-primary mb-3' %>
+    <%= button_to "Destroy this post", @post, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %>
   </div>
 <% end %>
+
+<h1>
+  <%= sanitize(@post.title) %>
+</h1>
+<p><%= @post.updated_at.strftime("%B %d, %Y")%></p>
+<p>By <%= link_to @post.user.author, author_path(@post.user.author), class: "link-underline-light mb-3" %></p>
+
+<%= @post.updated_at.strftime("%B %d, %Y") %>
+
+<%= sanitize(@post.content) %>
