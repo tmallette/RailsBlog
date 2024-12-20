@@ -4,13 +4,12 @@
 
 <h1>Posts</h1>
 
+<% if user_signed_in? %>
+  <%= link_to "New post", new_post_path %>
+<% end %>
+
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to post.title, post_path(post) %>
-    </p>
+    <%= link_to post.title, post_path(post) %>
   <% end %>
 </div>
-
-<%= link_to "New post", new_post_path %>

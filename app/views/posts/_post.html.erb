@@ -1,17 +1,6 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+<article id="<%= dom_id post %>">
+  <h1><%= post.title %></h1>
+  
+  <%= post.content %>
 
-  <p>
-    <strong>Slug:</strong>
-    <%= post.slug %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
-</div>
+</article>
