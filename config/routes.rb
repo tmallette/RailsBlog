@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts, param: :slug
   devise_for :users
   get 'about', to: 'about#index'
   root 'home#index'
